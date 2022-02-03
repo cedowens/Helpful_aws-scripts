@@ -118,12 +118,6 @@ def threader():
         worker = q.get()
         checkidentity(worker)
         q.task_done()
-
-#def threader():
-#    while True:
-#        worker = q.get()
-#        checkidentity(worker)
-#        q.task_done()
 ###########################
 
 if (len(sys.argv) != 3 and '-h' not in sys.argv):
