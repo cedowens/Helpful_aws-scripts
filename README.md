@@ -13,7 +13,7 @@ The scripts currently run with threading set to 50, but you can adjust that as n
 - checks parameterstore info
 - checks for dynamodb list_tables access
 
-2. check-s3-access.py: This is a threaded python3 script that can take a set of keys and quickly check against a long list of buckets to quickly identify which buckets that key can actually view into (i.e., a key pair may be able to list a bucket name but may not be able to view inside of that bucket, so this script helps with identifying which buckets a set of keys can actually see into)
+2. check-s3-access.py: This is a threaded python3 script that can take sets of keys and quickly check to identify which buckets that key can actually view into (i.e., a key pair may be able to list a bucket name but may not be able to view inside of that bucket, so this script helps with identifying which buckets a set of keys can actually see into)
 
 
 ## Steps
