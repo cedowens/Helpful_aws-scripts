@@ -8,7 +8,7 @@ from queue import Queue
 
 #########################
 def checkidentity(worker):
-    #s3 = boto3.resource('s3')
+    
     try:
         x = worker.split(':')
         accessky = x[0]
