@@ -4,8 +4,17 @@ python3 scripts that include threading to quickly perform checks on large sets (
 The scripts currently run with threading set to 50, but you can adjust that as needed within the script. This allows the script to finish recursive s3 bucket list access checks on large s3 listings in short order.
 
 2 scripts currently included:
-1. check-s3-access.py: This is a threaded python3 script that can take a set of keys and quickly check against a long list of buckets to quickly identify which buckets that key can actually view into (i.e., a key pair may be able to list a bucket name but may not be able to view inside of that bucket, so this script helps with identifying which buckets a set of keys can actually see into)
-2. check-identity.py: This is a threaded python3 script that can take one or many aws key pairs and very quickly check if those keys are active and if those keys have any s3 bucket accesses.
+1. check-identity.py: This is a threaded python3 script that can take one or many aws key pairs and very quickly check if those keys are active and quickly performs the following checks:
+- checks s3 bucket access
+- attempts to list role info
+- attempts to list group info
+- checks for servicesspecificcredentials
+- checks secretsmanager info
+- checks parameterstore info
+- checks for dynamodb list_tables access
+
+2. check-s3-access.py: This is a threaded python3 script that can take a set of keys and quickly check against a long list of buckets to quickly identify which buckets that key can actually view into (i.e., a key pair may be able to list a bucket name but may not be able to view inside of that bucket, so this script helps with identifying which buckets a set of keys can actually see into)
+
 
 ## Steps
 1. Ensure that boto3 is installed (pip3 install boto3)
