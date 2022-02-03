@@ -1,4 +1,4 @@
-# Check-S3-Access
+# Helpful aws boto3 scripts
 python3 script using the boto3 library that uses threading to quickly recursively check which s3 buckets a set of aws keys with s3 bucket access can actually read from. This helps solve the problem of having a set of s3 keys that can list out bucket names (ex: aws s3 ls) but you have no idea which buckets the key can actually ls into (ex: aws s3 ls s3://[bucketname])
 
 The script currently runs with threading set to 50, but you can adjust that as needed within the script. This allows the script to finish recursive s3 bucket list access checks on large s3 listings in short order.
