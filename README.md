@@ -20,6 +20,6 @@ The scripts currently run with threading set to 50, but you can adjust that as n
 1. Ensure that boto3 is installed (pip3 install boto3)
 2. Create a file (example: input.txt) and add one set of credentials per row in this format: accesskey,secretkey
 3. in check-identity.py, the region by default is set to **us-west-1**. You can edit that value in the script as needed.
-4. Run `python3 check-identity.py -f input.txt`. This script will take all key pairs inclued in input.txt and do a simple get-caller-identity call to see if the key pair is still active and then check to see if the key pair has s3 bucket access.
+4. Run `python3 check-identity.py -f input.txt`. This script will take all key pairs inclued in input.txt and perform the checks listed above.
 5. Based on which keys from #2 have s3 bucket access, add just those keys into a new input file (ex: input2.txt).
 6. Run `python3 check-s3-access.py -f input2.txt`. This script will then recursively check across all buckets to see which buckets a key pair can access see into. Results will be written to an outfile in the current directory with the access key in the filename. You can check the output for successes by running `grep "CAN read" [outputfile]`
