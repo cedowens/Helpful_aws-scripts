@@ -21,8 +21,8 @@ def checkidentity(worker):
         print("\033[92m===> UserId: %s\033[0m"%str(response['UserId']))
         print("\033[92m===> Arn: %s\033[0m"%str(response['Arn']))
         print("-------------------------------------------------------")
-    except:
-        pass
+    except Exception as e:
+        print("\033[91m %s"%e)
 
 
     try:
