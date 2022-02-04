@@ -22,7 +22,7 @@ def checkidentity(worker):
         print("\033[92m===> Arn: %s\033[0m"%str(response['Arn']))
         print("-------------------------------------------------------")
     except Exception as e:
-        print("\033[91m %s"%e)
+        print("\033[91m %s\033[0m"%e)
 
 
     try:
