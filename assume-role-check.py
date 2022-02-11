@@ -5,6 +5,11 @@ from optparse import OptionParser
 import os
 import sys
 
+#steps once you find an account with iam list-roles permissions:
+#1. run sts get-caller-identity on those keys and copy the ARN value (don't need to copy the quotes just the value)
+#2. run "aws iam list-roles > outfile.txt" with the creds you have
+#3. run this script: python3 assume-role-check.py -a [ARN_value] -f [list-roles-output-file.txt]. Results will be displayed to stdout
+
 if (len(sys.argv) != 5 and '-h' not in sys.argv):
     print("Usage: python3 %s -f [path_to_input_file]\n" % sys.argv[0])
     sys.exit(0)
