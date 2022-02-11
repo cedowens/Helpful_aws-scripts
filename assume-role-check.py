@@ -39,7 +39,7 @@ try:
 
 			if "Effect" in q2 and "Allow" in q2 and "Principal" in q2 and "AWS" in q2 and myarn2 in q2 and "'Condition': {}" in q2:
 				print("")
-				print("\033[92m\033[4m[+] Potential role for sts-assume role: (current identity: %s)\033[0m"%str(myarn))
+				print("\033[92m\033[4m[+] Potential role for sts-assume role: (current identity: %s)\033[0m"%str(arn))
 				print("\033[33mRole Name:\033[0m %s"%str(z))
 				print("\033[33mRole Arn:\033[0m %s"%str(x))
 				print("\033[33mAssumeRolePolicyDocument Info:\033[0m %s"%str(q2))
