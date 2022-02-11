@@ -15,7 +15,7 @@ Two of the scripts (check-identity.py and check-s3-access.py) currently run with
 
 2. check-s3-access.py: This is a threaded python3 script that can take sets of keys and quickly check to identify which buckets that key can actually view into (i.e., a key pair may be able to list a bucket name but may not be able to view inside of that bucket, so this script helps with identifying which buckets a set of keys can actually see into)
 
-3. assume-role-check.py: This script is intended to be run after discovering that a set of aws credentials have iam list-roles privileges. Steps: 1. run aws iam list-roles > output.txt, 2. run aws sts get-caller-identity on the creds and copy the ARN value, 3. python3 assume-role-check.py -a [ARN_value] -f [iam-list-roles-output-file]. The script will then check which roles are potential candidates for sts assume-role operations.
+3. assume-role-check.py: This script is intended to be run after discovering that a set of aws credentials have iam list-roles privileges. Steps: 1. run aws iam list-roles > output.txt, 2. run aws sts get-caller-identity on the creds and copy the ARN value, 3. python3 assume-role-check.py -a [ARN_value] -f [iam-list-roles-output-file]. The script will then check which roles are potential candidates for sts assume-role operations. IF NO OUTPUT IS RETURNED THEN NO CANDIDATE ROLES FOR STS ASSUME-ROLE WERE FOUND.
 
 
 ## Steps
@@ -31,4 +31,4 @@ Two of the scripts (check-identity.py and check-s3-access.py) currently run with
 **For assume-role-check.py:**
 1. run `aws iam list-roles > output.txt`
 2. run `aws sts get-caller-identity` on the creds and copy the ARN value
-3. run `python3 assume-role-check.py -a [ARN_value] -f [iam-list-roles-output-file-from-above]`. The script will then check which roles are potential candidates for sts assume-role operations.
+3. run `python3 assume-role-check.py -a [ARN_value] -f [iam-list-roles-output-file-from-above]`. The script will then check which roles are potential candidates for sts assume-role operations. IF NO OUTPUT IS RETURNED THEN NO CANDIDATE ROLES FOR STS ASSUME-ROLE WERE FOUND.
