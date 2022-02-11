@@ -1,7 +1,7 @@
 # Helpful aws boto3 scripts
-python3 scripts that include threading to quickly perform checks on large sets (either checks against many aws key pairs or checks against a long list of s3 buckets to see which s3 buckets a set of aws keys with s3 bucket access can actually read from) 
+python3 scripts to help with aws triage needs 
 
-The scripts currently run with threading set to 50, but you can adjust that as needed within the script. This allows the script to finish recursive s3 bucket list access checks on large s3 listings in short order.
+Two of the scripts (check-identity.py and check-s3-access.py) currently run with threading set to 50, but you can adjust that as needed within the script. This allows the script to finish recursive s3 bucket list access checks on large s3 listings in short order.
 
 3 scripts currently included:
 1. check-identity.py: This is a threaded python3 script that can take one or many aws key pairs and very quickly check if those keys are active and quickly performs the following checks:
